@@ -9,7 +9,7 @@ import joblib
 from sklearn.ensemble import RandomForestClassifier
 import altair as alt
 import streamlit.components.v1 as components
-from app_func import get_data, time_series_chart, z_score_outlier, time_windowing, scale_data, extract_and_impute_features, handle_missing_data
+from app_func import time_series_chart, z_score_outlier, time_windowing, scale_data, extract_and_impute_features, handle_missing_data
 import shap
 import streamlit as st
 from PIL import Image

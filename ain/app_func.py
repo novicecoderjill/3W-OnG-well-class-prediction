@@ -1,24 +1,3 @@
-def get_data():
-    import sys
-    import os
-    import toolkit as tk
-    import pandas as pd
-    sys.path.append(os.path.join('..', '..'))
-    # load dataset
-    real_instances, simulated_instances, drawn_instances = tk.get_all_labels_and_files()
-    instance_n = 7
-    # Filter instances labeled with 7
-    files_labeled_7 = [path for label, path in real_instances if label == instance_n ]
-    # Read the CSV files into DataFrames
-    dataframes = [pd.read_csv(file) for file in files_labeled_7]
-
-    # assign names to these DataFrames for easy access
-    df_dict = {file.stem: pd.read_csv(file) for file in files_labeled_7}
-    df_name = 'WELL-00001_20170226140146'
-    df = df_dict[df_name]
-
-    return df
-
 def handle_missing_data(df, columns) :  
 # Subset the DataFrame to only include the specified columns
     print(df.columns)
