@@ -6,7 +6,6 @@ The 3W Project is based on the 3W Dataset, a database described in this paper, a
 
 # Table of contents
 
-# Table of Contents
 
 1. [Introduction](#introduction)
 2. [Project Description](#project-description)
