@@ -123,7 +123,6 @@ if selected_data:
     # Make prediction
     # Load the trained Random Forest model
     model_path = f"./ain/predictionModel/{instance_n}/best_random_forest_model.pkl"
-    print(model_path)
     best_random_forest_model = joblib.load(model_path)
     y_pred = best_random_forest_model.predict(X_val)
     # print(y_pred)

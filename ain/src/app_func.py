@@ -19,9 +19,6 @@ def handle_missing_data(df, columns) :
     
     # modified_df = modified_df[modified_df['class'].notnull()]
 
-    # # replace 'class' with 107.0 as 7.0
-    # modified_df['class'] = modified_df['class'].replace(107.0, 7.0)
-
     # Smooth the DataFrame using a moving average 
     window_size = 1800
     smoothed_df = modified_df.copy()
@@ -29,35 +26,7 @@ def handle_missing_data(df, columns) :
     smoothed_df[sensor_columns] = modified_df[sensor_columns].rolling(window=window_size, min_periods=1).mean()
 
     return(modified_df, smoothed_df)
-# def handle_missing_data(df, columns) :  
-#     # Subset the DataFrame to only include the specified columns
-#     subset_df = df[columns]
 
-#     # Calculate the percentage of null values for each column in the subset
-#     null_percentages = subset_df.isnull().mean() * 100
-
-#     # List the columns with more than 18% null values
-#     columns_with_high_nulls = null_percentages[null_percentages > 18].index.tolist()
-
-#     # Drop the columns with high null values from the subset DataFrame
-#     modified_df = subset_df.drop(columns=columns_with_high_nulls)
-
-#     # Forward fill na values in the 'class' column
-#     if 'class' in modified_df.columns:
-#         modified_df['class'] = modified_df['class'].fillna(method='ffill')
-
-#     modified_df = modified_df[modified_df['class'].notnull()]
-
-#     # # replace 'class' with 107.0 as 7.0
-#     # modified_df['class'] = modified_df['class'].replace(107.0, 7.0)
-
-#     # Smooth the DataFrame using a moving average 
-#     window_size = 1800
-#     smoothed_df = modified_df.copy()
-#     sensor_columns = modified_df.columns.difference(['class'])
-#     smoothed_df[sensor_columns] = modified_df[sensor_columns].rolling(window=window_size, min_periods=1).mean()
-
-#     return(modified_df, smoothed_df)
 
 def time_series_chart(df, columns, time_scale):
     # Section: Time Series Visualization
@@ -114,31 +83,6 @@ def time_series_chart(df, columns, time_scale):
 
     return fig
 
-
-# def sensor_line_graph(df, columns_to_plot, unique_classes):
-#     import matplotlib.pyplot as plt
-    
-#     # Create a figure with a subplot for each column to plot
-#     fig, axes = plt.subplots(len(columns_to_plot), 1, figsize=(15, 20), sharex=True)
-    
-#     # Loop through each column to plot
-#     for i, column in enumerate(columns_to_plot):
-#         ax = axes[i] if len(columns_to_plot) > 1 else axes
-        
-#         # Plot each unique y_pred with its specific data points
-#         for unique_class in unique_classes:
-#             subset = df[df['y_pred'] == unique_class]
-#             ax.plot(subset.index, subset[column], label=f'y_pred {unique_class}', alpha=0.7)
-
-#         # Set plot labels, title, and grid
-#         ax.set_xlabel('Datetime')
-#         ax.set_ylabel(column)
-#         ax.set_title(f'Line Graph of {column} vs Datetime by y_pred')
-#         ax.legend()
-#         ax.grid(True)
-
-#     plt.tight_layout()
-#     return plt
 
 
 def sensor_line_graph(df, columns_to_plot, unique_classes, window_size=180):
