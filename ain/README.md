@@ -6,6 +6,19 @@ The 3W Project is based on the 3W Dataset, a database described in this paper, a
 
 # Table of contents
 
+# Table of Contents
+
+1. [Introduction](#introduction)
+2. [Project Description](#project-description)
+   1. [Exploratory Data Analysis (EDA)](#eda)
+   2. [Modifying Dataset](#modifying-dataset)
+   3. [Modeling](#modeling)
+   4. [Assessment](#assessment)
+   5. [Implementation](#implementation)
+3. [Reproducibility](#reproducibility)
+4. [Streamlit App Demo](#streamlit-app-demo)
+
+
 # Project description
 
 ## EDA
@@ -34,7 +47,7 @@ eg:
 
 Models were optimized by using GridSearch cross validation.
 
-## Assess
+## Assessment
 By using the test datasets, models were assessed and validated through several metrics including:
 - Accuracy
 - Precision
@@ -42,11 +55,11 @@ By using the test datasets, models were assessed and validated through several m
 - AUPRC
 - AUROC
 
-## Implentation
+## Implementation
 Through assessment and validation, the best model were identified as Random Forest. Explainable AI was added in the implementation to provide transparenct to the model. SHAP tree explainer was implemented to generate a SHAP summary plot.
 
 # Reproducibility
-The eda.ipynb and the model.ipynb are made to run based on prompted undesirable event label (0-8),and can be reproduced independently of each other. 
+The `eda.ipynb` and the `model.ipynb` are made to run based on prompted undesirable event label (0-8),and can be reproduced independently of each other. 
 
 To initialize a local Jupyter Notebook server:
 
@@ -57,5 +70,13 @@ $ jupyter notebook
 
 * To run the streamlit app locally:
 ```
-$ streamlit run ain/app.py
+$ streamlit run ain/src/app.py
 ```
+
+
+# Streamlit app demo
+
+
+https://github.com/user-attachments/assets/6c5d7132-19d8-4a24-b63d-006e3a5e6144
+
+
