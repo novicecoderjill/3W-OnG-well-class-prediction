@@ -15,88 +15,28 @@
 # Table of Content
 
 * [Introduction](#introduction)
-  * [Motivation](#motivation)
-  * [Strategy](#strategy)
-  * [Ambition](#ambition)
-  * [Contributions](#contributions)
-  * [Licenses](#licenses)
-  * [Versioning](#versioning)
-  * [Questions](#questions)
 * [3W dataset](#3w-dataset)
   * [Structure](#structure)
   * [Overview](#overview)
 * [3W toolkit](#3w-toolkit)
   * [Structure](#structure-1)
-  * [Incorporated Problems](#incorporated-problems)
-  * [Examples of Use](#examples-of-use)
-  * [Reproducibility](#reproducibility)  
+  * [Reproducibility](#reproducibility)
+* [Licenses](#licenses)
+
 
 # Introduction
 
-This is the first repository published by Petrobras on GitHub. It supports the 3W project, which aims to promote experimentation and development of Machine Learning-based approaches and algorithms for specific problems related to detection and classification of undesirable events that occur in offshore oil wells. 
-				
-The 3W project is based on the 3W dataset, a database described in [this](https://doi.org/10.1016/j.petrol.2019.106223) paper, and on the 3W toolkit, a software package that promotes experimentation with the 3W dataset for specific problems. The name **3W** was chosen because this dataset is composed of instances from ***3*** different sources and which contain undesirable events that occur in oil ***W***ells.
-
-## Motivation
-
-Timely detection of undesirable events in oil wells can help prevent production losses, reduce maintenance costs, environmental accidents, and human casualties. Losses related to this type of events can reach 5% of production in certain scenarios, especially in areas such as Flow Assurance and Artificial Lifting Methods. In terms of maintenance, the cost of a maritime probe, required to perform various types of operations, can exceed US $500,000 per day.
-
-Creating a dataset and making it public to be openly experienced can greatly foment the development of tools that can:
-
-* Improve the process of identifying undesirable events in offshore wells production;
-* Increase the efficiency of monitoring the integrity of wells and subsea systems, whose related problems can generate invaluable losses for people, environment, and company's image.
-
-## Strategy
+This repository originated from [Petrobras](https://github.com/petrobras/3W). More details on my contribution can be referred [here](https://github.com/novicecoderjill/3W-OnG-well-class-prediction/tree/main/ain)
 
 The 3W is the pilot of a Petrobras' program called [Conexões para Inovação - Módulo Open Lab](https://tecnologia.petrobras.com.br/modulo-open-lab). This pilot is an ***open project*** composed by two major resources:
 
 * The [3W dataset](#3w-dataset), which will be evolved and supplemented with more instances from time to time; 
 * The [3W toolkit](#3w-toolkit), which will also be evolved (in many ways) to cover an increasing number of undesirable events during its development.
 
-Therefore, our strategy is to make these resources publicly available so that we can develop the 3W project with a global community collaboratively.
+Therefore, its strategy is to make these resources publicly available so that we can develop the 3W project with a global community collaboratively.
 
-## Ambition
+The goal of this project was to predict the status classification of naturally flowing oil and gas well 
 
-With this project, Petrobras intends to develop (fix, improve, supplement, etc.):
-
-* The [3W dataset](#3w-dataset) itself;
-* The [3W toolkit](#3w-toolkit) itself;
-* Approaches and algorithms that can be incorporated into systems dedicated to monitoring undesirable events in offshore oil wells during their respective production phases;
-* Tools that can be useful for our ambition.
-
-## Contributions
-
-We expect to receive various types of contributions from individuals, research institutions, startups, companies and partner oil operators.
-
-Before you can contribute to this project, you need to read and agree to the following documents:
-
-* [CODE OF CONDUCT](CODE_OF_CONDUCT.md);
-* [CONTRIBUTOR LICENSE AGREEMENT](CONTRIBUTOR_LICENSE_AGREEMENT.md);
-* [CONTRIBUTING GUIDE](CONTRIBUTING.md).
-
-It is also very important to know, participate and follow the discussions. See the discussions section.
-
-## Licenses
-
-All the code of this project is licensed under the [Apache 2.0 License][apache] and all 3W dataset data files (CSV files in the subdirectories of the [dataset](dataset) directory) are licensed under the [Creative Commons Attribution 4.0 International License][cc-by].
-
-## Versioning
-
-In the 3W project, three types of versions will be managed as follows.
-
-* Version of the 3W toolkit: specified in the [__init__.py](toolkit/__init__.py) file;
-* Version of the 3W dataset: specified in the [dataset.ini](dataset/dataset.ini) file;
-* Version of the 3W project: specified with tags in the git repository;
-* We will exclusively use the semantic versioning defined in https://semver.org;
-* Versions will always be updated manually;
-* Versioning of the 3W toolkit and 3W dataset are completely independent of each other;
-* The version of the 3W project will be updated whenever, and only when, there is a new commit in the `main` branch of the repository, regardless of the updated resource: 3W toolkit, 3W dataset, project documentation, example of use, etc;
-* We will only use annotated tags and for each tag there will be a release in the remote repository (GitHub);
-* Content for each release will be automatically generated with functionality provided by GitHub.
-
-## Questions
-
-See the discussions section. If you don't get clarification, please open discussions to ask your questions so we can answer them.
 
 # 3W dataset
 
@@ -124,24 +64,7 @@ It is important to note that there are arbitrary choices in this toolkit, but th
 
 The 3W toolkit is implemented in sub-modules as discribed [here](3W_TOOLKIT_STRUCTURE.md).
 
-## Incorporated Problems
-
-Specific problems will be incorporated into this project gradually. At this point, we can work on:
-
-* [Binary classifier of Spurious Closure of DHSV](problems/01_binary_classifier_of_spurious_closure_of_dhsv/README.md).
-
 All specification is detailed in the [CONTRIBUTING GUIDE](CONTRIBUTING.md).
-
-## Examples of Use
-
-The list below with examples of how to use the 3W toolkit will be incremented throughout its development.
-
-* 3W dataset's overviews:
-  * [Baseline](overviews/_baseline/main.ipynb)
-* Binary classifier of Spurious Closure of DHSV:
-  * [Baseline](problems/01_binary_classifier_of_spurious_closure_of_dhsv/_baseline/main.ipynb)
-
-For a contribution of yours to be listed here, follow the instructions detailed in the [CONTRIBUTING GUIDE](CONTRIBUTING.md).
 
 ## Reproducibility
 
@@ -163,3 +86,21 @@ $ python
 ```
 $ jupyter notebook
 ```
+
+# Author's disclaimer
+
+## Contributions
+
+We expect to receive various types of contributions from individuals, research institutions, startups, companies and partner oil operators.
+
+Before you can contribute to this project, you need to read and agree to the following documents:
+
+* [CODE OF CONDUCT](CODE_OF_CONDUCT.md);
+* [CONTRIBUTOR LICENSE AGREEMENT](CONTRIBUTOR_LICENSE_AGREEMENT.md);
+* [CONTRIBUTING GUIDE](CONTRIBUTING.md).
+
+It is also very important to know, participate and follow the discussions. See the discussions section.
+
+# Licenses
+
+All the code of this project is licensed under the [Apache 2.0 License][apache] and all 3W dataset data files (CSV files in the subdirectories of the [dataset](dataset) directory) are licensed under the [Creative Commons Attribution 4.0 International License][cc-by].
